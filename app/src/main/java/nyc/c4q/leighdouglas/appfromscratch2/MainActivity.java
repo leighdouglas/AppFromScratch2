@@ -16,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void showRecyclerView(){
+    private void showRecyclerView() {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.activity_main, new RecyclerViewFragment());
         fragmentTransaction.commit();
     }
+
 }
 

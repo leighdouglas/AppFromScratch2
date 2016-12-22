@@ -31,8 +31,6 @@ public class ActivityTwo extends AppCompatActivity {
         date = intent.getStringExtra(Constants.EXTRA_DATE);
         content = intent.getStringExtra(Constants.EXTRA_CONTENT);
 
-        Log.d(TAG, date);
-
         showPost();
 
     }

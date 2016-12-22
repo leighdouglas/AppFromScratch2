@@ -11,9 +11,7 @@ import android.widget.TextView;
  * Created by leighdouglas on 12/6/16.
  */
 
-public class ViewHolder extends RecyclerView.ViewHolder {
-    static String EXTRA_ID = "id";
-    static String EXTRA_CONTENT = "content";
+public class RVViewHolder extends RecyclerView.ViewHolder {
 
     String TAG = "TAG";
     View mView;
@@ -23,7 +21,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     //private TextView content;
     private TextView title;
 
-    public ViewHolder(View itemView) {
+    public RVViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
         id = (TextView) mView.findViewById(R.id.id);

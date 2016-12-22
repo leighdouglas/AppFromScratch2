@@ -25,6 +25,10 @@ public class RecyclerViewFragment extends Fragment {
     private Adapter adapter;
     private RecyclerView recyclerView;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
@@ -36,9 +40,17 @@ public class RecyclerViewFragment extends Fragment {
         adapter = new Adapter();
         recyclerView.setAdapter(adapter);
 
-        runRetrofitCall();
+
+        //never run retrofit call in an onCreateView. You have to make sure that the layout is set,
+        // and if the call takes too long to come back, the app will crash
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        runRetrofitCall();
     }
 
     public void runRetrofitCall() {
